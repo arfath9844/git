@@ -35,11 +35,10 @@ pipeline {
             }
         }
 
-        // STEP 6 - Deployment Stage
-        stage('Deploy Stage') {
+        // STEP 4 - Run Test Cases
+        stage('Test Stage') {
             steps {
-                echo 'Deploying Application'
-                sh 'docker run -d -p 8080:8080 ${DOCKER_IMAGE}'
+                sh 'mvn test'
             }
         }
     }
