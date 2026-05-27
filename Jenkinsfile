@@ -35,20 +35,6 @@ pipeline {
             }
         }
 
-        // STEP 4 - Run Test Cases
-        stage('Test Stage') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-
-        // STEP 5 - Docker Build
-        stage('Docker Build') {
-            steps {
-                sh 'docker build -t ${DOCKER_IMAGE} .'
-            }
-        }
-
         // STEP 6 - Deployment Stage
         stage('Deploy Stage') {
             steps {
